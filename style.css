@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    
+    
+}
+
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 100px auto;
+    grid-template-areas: "hr hr"
+                          "lt rt";
+}
+
+.hr{
+    grid-area: hr;
+    
+}
+ .lt{
+    grid-area: lt;
+}
+
+.rt{
+    grid-area: rt;
+}
+
+.header-part{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.inner-box{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(211, 211, 211, 0.438);
+    border: 1px solid white;
+    padding: 20px;
+    
+    
+    
+}
+.header-signup{
+    display: flex;
+    justify-content: space-between;
+}
+.align{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.body-signup label{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+.body-signup input{
+    width: 100%;
+    margin-top: 5px;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.body-signup select,option{
+    width: 50%;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.body-signup input[type="submit"]{
+    background-color: green;
+    color: white;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    
+}
+.body-signup input[type="submit"]:hover{
+    background-color: red;
+}
+.body-signup{
+    height: 500px;
+    width: 500px;
+    overflow-y: scroll;
+    scrollbar-color: green  rgba(211, 211, 211, 0.438);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    scrollbar-width: thin;
+}
+
+
+/*desktop view*/
+@media screen and (min-width:992px) {
+
+.header-part{
+    display: none;
+}
+}
+/*mobile view*/
+@media screen and (max-width:992px){
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-auto-rows: 100px 500px auto;
+    grid-template-areas: "hr "
+                          "lt"
+                          "rt";
+}
+.inner-box{
+    border-radius: 20px;
+    margin: 20px;
+    transform: translateY(-40%);
+    background-color: white;
+    
+}
+.header-signup .gone{
+    display: none;
+
+}
+.align{
+    flex-direction: column;
+}
+
+}
